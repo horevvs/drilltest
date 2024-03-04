@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/drilltest/static/css/main.d06255f3.css",
-    "main.js": "/drilltest/static/js/main.d372521c.js",
+    "main.js": "/drilltest/static/js/main.ae41424e.js",
     "index.html": "/drilltest/index.html",
     "main.d06255f3.css.map": "/drilltest/static/css/main.d06255f3.css.map",
-    "main.d372521c.js.map": "/drilltest/static/js/main.d372521c.js.map"
+    "main.ae41424e.js.map": "/drilltest/static/js/main.ae41424e.js.map"
   },
   "entrypoints": [
     "static/css/main.d06255f3.css",
-    "static/js/main.d372521c.js"
+    "static/js/main.ae41424e.js"
   ]
 }
