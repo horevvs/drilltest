@@ -14,6 +14,8 @@ function App() {
                 <li className="page-item"> <NavLink to="/pagination" className='page-link'> 2 </NavLink> </li>
                 <li className="page-item"> <NavLink to="/killing" className='page-link'> 3 </NavLink> </li>
             </ul>
+
+            dsdsds
         </div>
     );
 }
