@@ -6,3 +6,7 @@
     background-image: url(/public/fon.jpg);
     background-size: cover
   }
+
+  .more{
+    margin-top: 15%;
+  }
