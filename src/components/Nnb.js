@@ -1,15 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-
-function Killing() {
+function Nmb() {
 
 
 
   return (
     <>
-      <nav class="  bg-dark ">
 
+      <nav class="  bg-dark ">
         <ul class=" d-flex justify-content-around">
           <li class="nav-item m-2 px-4 "> <NavLink className='link-light' to={'/killing'}
           > Глушение </NavLink>
@@ -29,13 +28,11 @@ function Killing() {
         </ul>
 
       </nav>
+      <div> Раздел ННБ в процессе разработки</div>
 
-      <div> Раздел глушение в процессе разработки</div>
+
     </>
   )
-
-
-
 }
 
-export default Killing;
+export default Nmb;

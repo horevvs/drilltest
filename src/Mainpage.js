@@ -8,15 +8,30 @@ function App() {
 
 
     return (
-        <div>
-            <ul className="pagination d-flex justify-content-center m-4">
-                <li className="page-item"> <NavLink to="/" className='page-link'> 1 </NavLink> </li>
-                <li className="page-item"> <NavLink to="/pagination" className='page-link'> 2 </NavLink> </li>
-                <li className="page-item"> <NavLink to="/killing" className='page-link'> 3 </NavLink> </li>
+
+
+
+        <nav class="  bg-dark ">
+
+            <ul class=" d-flex justify-content-around">
+                <li class="nav-item m-2 px-4 "> <NavLink className='link-light' to={'/killing'}
+                > Глушение </NavLink>
+                </li>
+
+                <li class="nav-item m-2 px-4 "> <NavLink className='link-light' to={'/drillmud'}
+                >Буровые растворы </NavLink>
+                </li>
+
+                <li class="nav-item m-2  px-4"> <NavLink className='link-light' to={'/nnb'}
+                >ННБ </NavLink>
+                </li>
+
+                <li class="nav-item m-2  px-4"> <NavLink className='link-light' to={'/other_calculations'}
+                >Прочие расчеты </NavLink>
+                </li>
             </ul>
 
-            dsdsds
-        </div>
+        </nav>
     );
 }
 

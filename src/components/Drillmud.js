@@ -2,8 +2,9 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 
-function Killing() {
 
+function Drillmud() {
+ 
 
 
   return (
@@ -30,12 +31,9 @@ function Killing() {
 
       </nav>
 
-      <div> Раздел глушение в процессе разработки</div>
+      <div> Раздел буровые растворы  в процессе разработки</div>
     </>
   )
-
-
-
 }
 
-export default Killing;
+export default Drillmud;

@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import './App2.css'
-import Button from 'react-bootstrap/Button';
+import Button from 'react-bootstrap/Button'
 
 
-
-function Profiles() {
+function Other_calculations() {
 
   const [inputs, setInputs] = useState([])
   const [inputs2, setInputs2] = useState([])
@@ -50,53 +48,31 @@ function Profiles() {
 
 
 
-  const divStyle = {
-    height: '2050px'
-  };
 
   return (
     <>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
-        <div class="container ">
-          <a class="navbar-brand" href="#!">Инженерные расчеты</a>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item m-1 "> <NavLink to={'/Blog'}
-                style={({ isActive }) =>
-                ({
-                  color: isActive ? '#ffff' : '#ffff',
-                  textDecoration: isActive ? 'none' : 'none'
-                })}>
 
-                Глушение </NavLink> </li>
+      <nav class="  bg-dark ">
+        <ul class=" d-flex justify-content-around">
+          <li class="nav-item m-2 px-4 "> <NavLink className='link-light' to={'/killing'}
+          > Глушение </NavLink>
+          </li>
 
-              <li class="nav-item m-1"> <NavLink to={'/Chats'}
-                style={({ isActive }) => ({
-                  color: isActive ? '#ffff' : '#ffff',
-                  textDecoration: isActive ? 'none' : 'none'
-                })}> Цементаж </NavLink> </li>
+          <li class="nav-item m-2 px-4 "> <NavLink className='link-light' to={'/drillmud'}
+          >Буровые растворы </NavLink>
+          </li>
 
-              <li class="nav-item m-1"> <NavLink to={'/Profiles'}
-                style={({ isActive }) => ({
-                  color: isActive ? '#ffff' : '#ffff',
-                  textDecoration: isActive ? 'none' : 'none'
-                })}> Буровые растворы </NavLink> </li>
+          <li class="nav-item m-2  px-4"> <NavLink className='link-light' to={'/nnb'}
+          >ННБ </NavLink>
+          </li>
 
+          <li class="nav-item m-2  px-4"> <NavLink className='link-light' to={'/other_calculations'}
+          >Прочие расчеты </NavLink>
+          </li>
+        </ul>
 
-              <li class="nav-item m-1"> <NavLink to={'/Metric'}
-                style={({ isActive }) => ({
-                  color: isActive ? '#ffff' : '#ffff',
-                  textDecoration: isActive ? 'none' : 'none'
-                })}
-              > Перевод величин </NavLink> </li>
-            </ul>
-          </div>
-        </div>
       </nav>
-
-
-
-      <div style={divStyle} class="bg-info mx-5 bg-opacity-25 p-3  ">
+      <div  class="bg-info mx-5 bg-opacity-25 p-3  ">
 
         <p class="mx-5 pt-5 fs-5"> 1. Расчет  гидростатического давления на забое</p>
         <div class="form-group mx-5  w-25">
@@ -193,8 +169,13 @@ function Profiles() {
 
 
       </div>
+
+
+
+
+
     </>
   )
 }
 
-export default Profiles;
+export default Other_calculations;
