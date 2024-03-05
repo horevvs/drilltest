@@ -33,7 +33,7 @@ function App() {
 
             </nav>
 
-            <div className="text-center  more fs-1 fw-bold  text-light" > Bohren macht frei  </div>
+            <div className="text-center  more fs-1 fw-bold  text-light" > Инженерные расчеты для технологов </div>
         </>
     );
 }
