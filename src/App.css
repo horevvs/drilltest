@@ -4,9 +4,22 @@
 
   body{
     background-image: url(/public/fon.jpg);
-    background-size: cover
+    background-position: center center;
+    /* определяет размер изображения на странице */
+    background-size: cover;
+    /* свойство устанавливает, будет ли повторяться изображение и каким образом */
+    background-repeat: no-repeat;
+    /* cвойство определяет, будет ли фоновое изображение прокручиваться 
+    вместе с остальной частью страницы или будет фиксированным */
+    background-attachment: fixed;
+    
   }
 
   .more{
     margin-top: 15%;
+  }
+
+  .height_control{
+    background-color: brown;
+    max-width: 200px ;
   }

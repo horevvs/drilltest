@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import Button from 'react-bootstrap/Button'
+import '../App.css';
 
 
 function Other_calculations() {
@@ -13,6 +14,9 @@ function Other_calculations() {
   const [value, setValue] = useState('');
   const [value2, setValue2] = useState('');
   const [value3, setValue3] = useState('');
+  const [value4, setValue4] = useState('');
+  const [value5, setValue5] = useState('');
+  const [value6, setValue6] = useState('');
 
   const getValues = () => {
     const density = inputs;
@@ -26,9 +30,15 @@ function Other_calculations() {
 
   const getValues2 = () => {
     const result2 = inputs4.replace(/\,/g, '.') / 10.197;
-    alert(result2.toFixed(4) + 'Мпа');
+    alert(result2.toFixed(4) + 'МПа');
   }
 
+  const pgm = () => {
+
+    let res = (Math.pow(0.001 * (value4 - (value5 * 2)), 2) * 0.785 * 1000) - (Math.pow(0.001 * (value6), 2) * 0.785 * 1000)
+
+    alert(res);
+  }
 
   const getValues3 = () => {
     const result3 = inputs5.replace(/\,/g, '.') / 0.09806;
@@ -53,8 +63,8 @@ function Other_calculations() {
     <>
 
       <nav class="  bg-dark ">
-        <ul class=" d-flex justify-content-around">
-          <li class="nav-item m-2 px-4 "> <NavLink className='link-light' to={'/killing'}
+        <ul class=" d-flex flex-sm-row flex-column    justify-content-around">
+          <li class="nav-item m-2 px-4  "> <NavLink className='link-light' to={'/killing'}
           > Глушение </NavLink>
           </li>
 
@@ -72,22 +82,24 @@ function Other_calculations() {
         </ul>
 
       </nav>
-      <div  class="bg-info mx-5 bg-opacity-25 p-3  ">
 
-        <p class="mx-5 pt-5 fs-5"> 1. Расчет  гидростатического давления на забое</p>
-        <div class="form-group mx-5  w-25">
+      
+      <div class="bg-info mx-3 bg-opacity-25  ">
+
+        <h2 class="mx-5 pt-5 fs-5"> 1. Расчет  гидростатического давления на забое</h2>
+        <div class="form-group mx-5  ">
           <label for="formGroupExampleInput">Плотность промывочной жидкости (кг/м<sup>3</sup>) </label>
-          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Введите значение" value={inputs} onChange={(e) => setInputs(e.target.value)} />
+          <input type="text" class="form-control height_control" id="formGroupExampleInput" placeholder="Введите значение" value={inputs} onChange={(e) => setInputs(e.target.value)} />
         </div>
 
-        <div class="form-group mx-5  pt-2 w-25">
+        <div class="form-group mx-5  pt-2 ">
           <label for="formGroupExampleInput2 pt-5" > Расчетная глубина (м) </label>
-          <input type="text" class="form-control " id="formGroupExampleInput2" placeholder="Введите значение" value={inputs2} onChange={(e) => setInputs2(e.target.value)} />
+          <input type="text" class="form-control  height_control" id="formGroupExampleInput2" placeholder="Введите значение" value={inputs2} onChange={(e) => setInputs2(e.target.value)} />
         </div>
 
-        <div class="form-group mx-5  pt-2 w-25">
+        <div class="form-group mx-5  pt-2 ">
           <label for="formGroupExampleInput2 pt-5" >Давление на устье (Мпа) </label>
-          <input type="text" class="form-control " id="formGroupExampleInput2" placeholder="Введите значение" value={inputs3} onChange={(e) => setInputs3(e.target.value)} />
+          <input type="text" class="form-control height_control " id="formGroupExampleInput2" placeholder="Введите значение" value={inputs3} onChange={(e) => setInputs3(e.target.value)} />
         </div>
 
         <div class='mx-5 py-4'>
@@ -96,10 +108,10 @@ function Other_calculations() {
           </Button>
         </div>
 
-        <p class="mx-5 py-2 fs-5"> 2. Перевод Мпа в атмосферы и обратно</p>
-        <div class="form-group mx-5  w-25 ">
+        <h2 class="mx-5 py-2 fs-5"> 2. Перевод Мпа в атмосферы и обратно</h2>
+        <div class="form-group mx-5  ">
           <label for="formGroupExampleInput2 pt-5" >Значение в (кгс/см²) </label>
-          <input type="text" class="form-control " id="formGroupExampleInput2" placeholder="Введите значение" value={inputs4} onChange={(e) => setInputs4(e.target.value)} />
+          <input type="text" class="form-control height_control " id="formGroupExampleInput2" placeholder="Введите значение" value={inputs4} onChange={(e) => setInputs4(e.target.value)} />
           <div class=' py-4'>
             <Button onClick={() => getValues2()} variant="primary" size="sm" active>
               Выполнить перевод в Мпа
@@ -107,9 +119,9 @@ function Other_calculations() {
           </div>
         </div>
 
-        <div class="form-group mx-5  w-25 ">
+        <div class="form-group mx-5 ">
           <label for="formGroupExampleInput2 pt-5" >Значение в (Мпа) </label>
-          <input type="text" class="form-control " id="formGroupExampleInput2" placeholder="Введите значение" value={inputs5} onChange={(e) => setInputs5(e.target.value)} />
+          <input type="text" class="form-control height_control " id="formGroupExampleInput2" placeholder="Введите значение" value={inputs5} onChange={(e) => setInputs5(e.target.value)} />
           <div class=' py-4'>
             <Button onClick={() => getValues3()} variant="primary" size="sm" active>
               Выполнить перевод в  кгс/см²
@@ -117,11 +129,10 @@ function Other_calculations() {
           </div>
         </div>
 
-        <p class="mx-5 py-3 fs-5"> 3. Расчет  объёма скважины</p>
+        <h2 class="mx-5 py-3 fs-5"> 3. Расчет  объёма скважины</h2>
 
         <div>
-
-          <select class="form-select w-25 mx-5 my-3" aria-label="Default select example" value={value} onChange={(e) => setValue(e.target.value)}>
+          <select class="form-select height_control mx-5  my-3" aria-label="Default select example" value={value} onChange={(e) => setValue(e.target.value)}>
             <option selected>Диаметр эксплуатационной колонны, мм</option>
             <option value="114">114</option>
             <option value="127">127</option>
@@ -136,7 +147,7 @@ function Other_calculations() {
           </select>
 
 
-          <select class="form-select w-25 mx-5" aria-label="Default select example" value={value2} onChange={(e) => setValue2(e.target.value)}>
+          <select class="form-select height_control mx-5" aria-label="Default select example" value={value2} onChange={(e) => setValue2(e.target.value)}>
             <option selected>Толщина стенки, мм </option>
             <option value="5.2">5,2</option>
             <option value="5.7">5,7</option>
@@ -154,7 +165,7 @@ function Other_calculations() {
             <option value="12.7">12.7</option>
           </select>
 
-          <input type="text" class="form-control my-3  w-25 mx-5" id="formGroupExampleInput2" placeholder="Укажите глубину скважины, м" value={value3} onChange={(e) => setValue3(e.target.value)} />
+          <input type="text" class="form-control my-3 height_control  mx-5" id="formGroupExampleInput2" placeholder="Укажите глубину скважины, м" value={value3} onChange={(e) => setValue3(e.target.value)} />
 
 
         </div>
@@ -166,6 +177,74 @@ function Other_calculations() {
           </Button>
         </div>
 
+        <h2 class="mx-5 py-3 fs-5"> 4. Расчет объема кольцевого пространства скважины</h2>
+
+        <div>
+
+          <select class="form-select height_control mx-5 my-3" aria-label="Default select example" value={value4} onChange={(e) => setValue4(e.target.value)}>
+            <option selected>Диаметр эксплуатационной колонны, мм</option>
+            <option value="114">114</option>
+            <option value="127">127</option>
+            <option value="140">140</option>
+            <option value="146">146</option>
+            <option value="168.3">168.3</option>
+            <option value="178">178</option>
+            <option value="194">194</option>
+            <option value="219">219</option>
+            <option value="244.5">244.5</option>
+            <option value="324">324</option>
+            <option value="426">426</option>
+          </select>
+
+
+          <select class="form-select height_control mx-5" aria-label="Default select example" value={value5} onChange={(e) => setValue5(e.target.value)}>
+            <option selected>Толщина стенки, мм </option>
+            <option value="5.2">5,2</option>
+            <option value="5.7">5,7</option>
+            <option value="6.4">6.4</option>
+            <option value="7.4">7.4</option>
+            <option value="8.6">8.6</option>
+            <option value="8.94">8.94</option>
+            <option value="9.2">9.2</option>
+            <option value="9.5">9.5</option>
+            <option value="10.2">10.2</option>
+            <option value="10.5">10.5</option>
+            <option value="10.6">10.6</option>
+            <option value="10.6">10.6</option>
+            <option value="11.5">10.5</option>
+            <option value="12.7">12.7</option>
+          </select>
+
+          <select class="form-select height_control mx-5 my-3" aria-label="Default select example" value={value6} onChange={(e) => setValue6(e.target.value)}>
+            <option selected>Диаметр спущенной в скважину НКТ, мм</option>
+            <option value="73">73</option>
+            <option value="89">89</option>
+            <option value="114">114</option>
+            <option value="127">127</option>
+            <option value="140">140</option>
+            <option value="146">146</option>
+            <option value="168.3">168.3</option>
+            <option value="178">178</option>
+            <option value="194">194</option>
+            <option value="219">219</option>
+            <option value="244.5">244.5</option>
+            <option value="324">324</option>
+          </select>
+
+
+          <div class='  px-5 py-4'>
+            <Button class=" mx-5 w-25 mx-5" onClick={() => pgm()} variant="primary" size="sm" active>
+              Рассчитать объем 1 погонного метра
+            </Button>
+          </div>
+
+
+
+
+
+
+
+        </div>
 
 
       </div>
